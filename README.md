@@ -9,6 +9,7 @@ This software is alpha, is not an official IFTTT product and is distributed as-i
 - More domain-specific media handling
 - Custom configurations for user-created recipes
 - Better error handling
+- Popup positioning issues when iframe'd
 
 ## Installation
 
