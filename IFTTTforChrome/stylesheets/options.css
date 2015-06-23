@@ -1,0 +1,74 @@
+@-moz-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* line 14, ../sass/options.scss */
+#ifttt-chrome-options img {
+  margin: 14px;
+  margin-top: 20px;
+}
+/* line 19, ../sass/options.scss */
+#ifttt-chrome-options #options,
+#ifttt-chrome-options #recipes {
+  font-size: 1.5em;
+  padding: 12px;
+  padding-top: 0;
+}
+/* line 27, ../sass/options.scss */
+#ifttt-chrome-options #options.submitting {
+  pointer-events: none;
+}
+/* line 31, ../sass/options.scss */
+#ifttt-chrome-options #options input,
+#ifttt-chrome-options #options label,
+#ifttt-chrome-options #options p {
+  margin-bottom: 10px;
+  display: block;
+}
+/* line 38, ../sass/options.scss */
+#ifttt-chrome-options #options label {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+/* line 43, ../sass/options.scss */
+#ifttt-chrome-options #options #secret-key {
+  width: 350px;
+  padding: 5px;
+}
+/* line 48, ../sass/options.scss */
+#ifttt-chrome-options #options .btn-loud {
+  font-weight: bold !important;
+  margin-top: 20px;
+}
+/* line 54, ../sass/options.scss */
+#ifttt-chrome-options #recipes {
+  display: none;
+  -moz-animation: fade-in 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-animation: fade-in 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+  animation: fade-in 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+/* line 58, ../sass/options.scss */
+#ifttt-chrome-options #recipes h2 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}

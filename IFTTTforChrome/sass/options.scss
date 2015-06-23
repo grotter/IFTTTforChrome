@@ -1,0 +1,63 @@
+@import "compass/css3";
+$easing: cubic-bezier(.215,.61,.355,1);
+
+@include keyframes(fade-in) {
+	from {
+		@include opacity(0);
+	}
+	to {
+		@include opacity(1);
+	}
+}
+
+#ifttt-chrome-options {
+	img {
+		margin: 14px;
+		margin-top: 20px;
+	}
+
+	#options,
+	#recipes {
+		font-size: 1.5em;
+		padding: 12px;
+		padding-top: 0;
+	}
+
+	#options {
+		&.submitting {
+			pointer-events: none;
+		}
+
+		input,
+		label,
+		p {
+			margin-bottom: 10px;
+			display: block;
+		}
+
+		label {
+			font-weight: bold;
+			font-size: 1.5em;
+		}
+
+		#secret-key {
+			width: 350px;
+			padding: 5px;
+		}
+
+		.btn-loud {
+			font-weight: bold !important;
+			margin-top: 20px;
+		}
+	}
+
+	#recipes {
+		display: none;
+		@include animation(fade-in .4s $easing);
+
+		h2 {
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+	}
+}

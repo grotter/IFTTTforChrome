@@ -1,0 +1,43 @@
+{
+  "name": "IFTTT for Chrome",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Integrate the web with anything via IFTTT using this handy context menu",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    "icons/*"
+  ],
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://ifttt.com; object-src 'self'",
+  "permissions": [
+    "contextMenus"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "js/jquery-1.11.3.min.js",
+      "js/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "css": [
+        "stylesheets/ifttt.css",
+        "stylesheets/content.css"
+      ],
+      "js": [
+        "js/jquery-1.11.3.min.js",
+        "js/offscreen.js",
+        "js/inject.js"
+      ]
+    }
+  ]
+}
