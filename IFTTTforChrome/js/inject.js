@@ -1,12 +1,4 @@
 (function ($) {
-	String.prototype.escapeForSMS = function () {
-		return this.replace(/‘|’/g, "'").replace(/“|”/g, '"').replace(/—|–/g, "-");
-	}
-
-	String.prototype.getUrlFromCSS = function () {
-		return this.replace(/^url\(["']?/, '').replace(/["']?\)$/, '');
-	}
-
 	var IFTTTMenu = function () {
 		var _selected;
 		var _selectEvent;
@@ -133,7 +125,7 @@
 				}
 			} else {
 				// super-brittle special handling for flickr
-				if (document.domain.indexOf('flickr.com') >= 0) {
+				if (IFTTTUtils.isDomain('flickr.com')) {
 					var img = $('img.zoom-large');
 					if (!img.length) img = $('img.main-photo');
 
@@ -159,7 +151,7 @@
 				}
 
 				// super-brittle special handling for instagram
-				if (document.domain.indexOf('instagram.com') >= 0) {
+				if (IFTTTUtils.isDomain('instagram.com')) {
 					var video = $('video', _selected.parents('article').get(0));
 
 					if (video.length == 1) {
@@ -168,6 +160,19 @@
 						}
 					}
 
+					if (_selected.siblings('img').length) {
+						var img = _selected.siblings('img');
+
+						img.each(function () {
+							if ($(this).width() > 200) {
+								src = $(this).attr('src');
+							}
+						});	
+					}
+				}
+
+				// super-brittle special handling for nytimes.com
+				if (IFTTTUtils.isDomain('nytimes.com')) {
 					if (_selected.siblings('img').length) {
 						var img = _selected.siblings('img');
 
