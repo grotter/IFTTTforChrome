@@ -12,6 +12,6 @@ This software is alpha, is not an official IFTTT product and is distributed as-i
 
 ## Installation
 
-1. Drop the IFTTTforChrome.crx file onto [Chrome&rsquo;s extension page](chrome://extensions).
+1. Drop the IFTTTforChrome.crx file onto Chrome&rsquo;s extension page (chrome://extensions).
 2. Enter your [IFTTT Maker Channel](https://ifttt.com/maker) secret key.
 3. Install the [Dropbox](https://ifttt.com/view_embed_recipe/302073-ifttt-for-chrome-dropbox-media) and [SMS](https://ifttt.com/view_embed_recipe/302072-ifttt-for-chrome-sms) recipes to get started.
