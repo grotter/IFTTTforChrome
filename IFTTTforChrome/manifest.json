@@ -37,7 +37,8 @@
         "js/jquery-1.11.3.min.js",
         "js/offscreen.js",
         "js/utils.js",
-        "js/inject.js"
+        "js/inject.js",
+        "js/parsedomain.js"
       ]
     }
   ]
