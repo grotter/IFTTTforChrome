@@ -50,21 +50,29 @@ $easing: cubic-bezier(.215,.61,.355,1);
 		background-repeat: no-repeat;
 		background-position: $padding $padding;
 
-		-webkit-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
 		line-height: 22px !important;
 		font-size: 18px !important;
 		
 		&, li {
-			margin: 0;
-			padding: 0;
+			list-style: none !important;
 		}
 
+		margin: 0 !important;
+		padding: 0 !important;
 		padding: $padding !important;
 		padding-top: 22px + ($padding * 2) !important;
 
 		li {
-			margin-left: -2px;
-			margin-bottom: 6px;
+			text-align: left !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			margin-left: -2px !important;
+			margin-bottom: 6px !important;
+
+			&:last-child {
+				margin-bottom: 2px !important;
+			}
 
 			a:hover {
 				border-bottom: 2px solid rgb(51, 204, 255);

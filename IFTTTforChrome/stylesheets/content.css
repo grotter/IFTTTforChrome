@@ -93,24 +93,32 @@
   -webkit-font-smoothing: antialiased;
   line-height: 22px !important;
   font-size: 18px !important;
+  margin: 0 !important;
+  padding: 0 !important;
   padding: 12px !important;
   padding-top: 46px !important;
 }
 /* line 57, ../sass/content.scss */
 #ifttt-chrome-popup ul, #ifttt-chrome-popup ul li {
-  margin: 0;
-  padding: 0;
+  list-style: none !important;
 }
-/* line 65, ../sass/content.scss */
+/* line 66, ../sass/content.scss */
 #ifttt-chrome-popup ul li {
-  margin-left: -2px;
-  margin-bottom: 6px;
+  text-align: left !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-left: -2px !important;
+  margin-bottom: 6px !important;
 }
-/* line 69, ../sass/content.scss */
+/* line 73, ../sass/content.scss */
+#ifttt-chrome-popup ul li:last-child {
+  margin-bottom: 2px !important;
+}
+/* line 77, ../sass/content.scss */
 #ifttt-chrome-popup ul li a:hover {
   border-bottom: 2px solid #33ccff;
 }
-/* line 73, ../sass/content.scss */
+/* line 81, ../sass/content.scss */
 #ifttt-chrome-popup ul li.success {
   -moz-animation: fade-in 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
   -webkit-animation: fade-in 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
