@@ -50,7 +50,7 @@ $easing: cubic-bezier(.215,.61,.355,1);
 		background-repeat: no-repeat;
 		background-position: $padding $padding;
 
-	-webkit-font-smoothing: antialiased;
+		-webkit-font-smoothing: antialiased;
 		line-height: 22px !important;
 		font-size: 18px !important;
 		
@@ -80,7 +80,8 @@ $easing: cubic-bezier(.215,.61,.355,1);
 
 			&.success {
 				@include animation(fade-in .4s $easing);
-				font-weight: bold;
+				font-weight: bold !important;
+				color: #333 !important;
 				font-size: 1.5em;
 				margin-top: 5px;
 			}
