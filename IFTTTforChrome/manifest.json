@@ -39,7 +39,8 @@
         "js/utils.js",
         "js/inject.js",
         "js/parsedomain.js"
-      ]
+      ],
+      "all_frames": true
     }
   ]
 }

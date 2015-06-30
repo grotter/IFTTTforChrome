@@ -12,11 +12,23 @@
 		var _togglePopup = function (boo) {
 			if (!_popup) return;
 
+			// console.log(IFTTTUtils.isIframed());
+
 			_popup.attr('class', '');
 			_popup.attr('style', '');
 
 			if (boo) {
 				_popup.show();
+
+				if ($('body').outerWidth(true) < 600) {
+					// probably in an iframe, just center
+					_popup.css({
+						top: (Math.round(($('body').outerHeight(true) - _popup.outerHeight(true)) / 2) - 10) + 'px',
+						left: Math.round(($('body').outerWidth(true) - _popup.outerWidth(true)) / 2) + 'px'
+					});
+					
+					return;
+				}
 
 				_popup.css({
 					top: _selectEvent.pageY + 'px',
@@ -203,6 +215,12 @@
 			$('body').append(img);
 		}
 
+		var _onActive = function () {
+			chrome.runtime.sendMessage({
+				knockknock: 1
+			});
+		}
+
 		this.initialize = function () {
 			_cacheAssets();			
 			
@@ -215,6 +233,7 @@
 			$(document).on('contextmenu', function (e) {
 				_selected = $(e.target);
 				_selectEvent = e;
+				_onActive();
 			});
 
 			// listen for context menu
@@ -223,7 +242,9 @@
 					_secretKey = request.secretKey;
 				}
 
-				if (request.ifttt) {
+				if (request.close) {
+					_togglePopup(false);
+				} else if (request.ifttt) {
 					_insertTip(request);	
 				}
 			});

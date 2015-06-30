@@ -8,6 +8,13 @@ String.prototype.getUrlFromCSS = function () {
 
 var IFTTTUtils = {
 	isDomain: function (check) {
-		return (document.domain.indexOf(check) >= 0);
+		return document.domain.indexOf(check) >= 0;
+	},
+	isIframed: function () {
+		try {
+			return window.self !== window.top;
+		} catch (e) {
+			return true;
+		}
 	}
 };
