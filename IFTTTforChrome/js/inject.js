@@ -70,7 +70,8 @@
 				position: 'absolute',
 				width: '500px',
 				height: '500px',
-				left: '-99999px'
+				left: '-99999px',
+				top: '-99999px'
 			});
 			
 			container.on('load error', function () {
@@ -209,7 +210,8 @@
 			
 			img.css({
 				position: 'absolute',
-				left: '-999999999px'
+				left: '-999999999px',
+				top: '-999999999px'
 			});
 
 			$('body').append(img);
