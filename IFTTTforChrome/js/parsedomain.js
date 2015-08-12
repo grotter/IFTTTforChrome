@@ -33,7 +33,8 @@ var ParseDomain = function (selected) {
 
 		// Instagram
 		if (IFTTTUtils.isDomain('instagram.com')) {
-			var video = $('video', _selected.parents('article').get(0));
+			var article = _selected.parents('article').get(0);
+			var video = $('video', article);
 
 			if (video.length == 1) {
 				if (video.attr('src')) {
@@ -41,9 +42,9 @@ var ParseDomain = function (selected) {
 				}
 			}
 
-			if (_selected.siblings('img').length) {
-				var img = _selected.siblings('img');
-
+			var img = $('img', article);
+			
+			if (img.length) {
 				img.each(function () {
 					if ($(this).width() > 200) {
 						src = $(this).attr('src');
