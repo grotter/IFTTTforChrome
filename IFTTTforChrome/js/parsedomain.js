@@ -1,4 +1,4 @@
-var ParseDomain = function (selected) {
+	var ParseDomain = function (selected) {
 	var $ = jQuery;
 	var _selected = selected;
 
@@ -73,6 +73,23 @@ var ParseDomain = function (selected) {
 			if ($('video', container).length == 1) {
 				return $('video', container).attr('src');
 			}
+		}
+
+		// Artsy
+		if (IFTTTUtils.isDomain('artsy.net')) {
+			$('meta').each(function () {
+				if ($(this).attr('property') == 'og:image') {
+					var content = $(this).attr('content');
+					var query = content.substring(content.indexOf('?'));
+					var hires = IFTTTUtils.getQueryString('src', query);
+
+					if (hires) {
+						src = hires.replace('large', 'normalized');
+					}
+
+					return false;
+				}
+			});			
 		}
 
 		return src;
